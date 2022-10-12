@@ -1,6 +1,13 @@
 name: Unit test
 
-on: [push]
+on:
+  push:
+    tags-ignore:
+      - '[0-9].*'
+    branches:
+      - '**'
+      - '!docs/*'
+      - '!main'
 
 jobs:
   build:
