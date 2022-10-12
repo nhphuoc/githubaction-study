@@ -7,7 +7,7 @@ plugins {
 }
 
 group = 'com.nhphuoc'
-version = '0.3.0'
+version = '0.4.0'
 sourceCompatibility = '17'
 
 repositories {
