@@ -1,0 +1,21 @@
+name: Increment version
+
+on:
+  workflow_run:
+    workflows: ["Tag Version"]
+    branches:
+      - 'main'
+    types:
+      - completed
+
+jobs:
+  increment_version:
+    # run job if previous was successful
+    # don`t run if commit message starts with '[RELEASE]' to prevent infinite loop
+    if: ${{ github.event.workflow_run.conclusion == 'success' && !startsWith(github.event.head_commit.message, '[RELEASE]') }}
+    name: tag version
+    uses: swiss-code/common_workflows/.github/workflows/gradle-increment-version.yml@main
+    with:
+      gradle_location: lib/build.gradle
+    secrets:
+      checkout_token: ${{ secrets.NHPHUOC_GITHUB_ACTION_SECRET }}
