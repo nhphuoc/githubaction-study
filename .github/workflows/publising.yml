@@ -9,12 +9,10 @@
 
 name: Publish package to GitHub Packages
 on:
-  workflow_run:
-    workflows: [ "Java CI" ]
-    branches:
-      - 'main'
-    types:
-      - completed
+  push:
+    tags:
+      - '0.*'
+      - '1.*'
 jobs:
   publish:
     runs-on: ubuntu-latest
