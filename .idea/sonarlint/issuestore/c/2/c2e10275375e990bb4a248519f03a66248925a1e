@@ -1,0 +1,5 @@
+
+c
+java:S3824*"HReplace this "Map.containsKey()" with a call to "Map.computeIfAbsent()".(γκόÿÿÿÿ
+b
+java:S3252 "LUse static access with "org.keycloak.adapters.spi.HttpFacade" for "Request".(€Τ•
